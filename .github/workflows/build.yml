@@ -33,15 +33,7 @@ jobs:
         run: npm ci
 
       - name: 打包 Tauri 应用
-        uses: tauri-apps/tauri-action@v0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tagName: v__VERSION__
-          releaseName: '工作量管理器 v__VERSION__'
-          releaseBody: '工作量管理器 Windows 安装包'
-          releaseDraft: false
-          prerelease: false
+        run: npm run tauri build
 
       - name: 上传安装包
         uses: actions/upload-artifact@v4
@@ -50,5 +42,4 @@ jobs:
           path: |
             src-tauri/target/release/bundle/nsis/*.exe
             src-tauri/target/release/bundle/msi/*.msi
-          if-no-files-found: warn
-          retention-days: 7
+          retention-days: 30
