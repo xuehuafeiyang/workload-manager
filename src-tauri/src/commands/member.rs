@@ -1,4 +1,3 @@
-use crate::db::init_db;
 use crate::models::member::{CreateMemberInput, Member, UpdateMemberInput};
 use rusqlite::params;
 use tauri::State;
