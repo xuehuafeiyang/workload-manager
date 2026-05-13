@@ -1,0 +1,5 @@
+# 本地开发时如遇 Windows Defender 拦截编译，可取消注释以下配置
+# 将编译输出重定向到其他目录，然后在管理员终端添加该目录到 Defender 排除列表
+#
+# [build]
+# target-dir = "C:\\cargo-target\\workload-manager"
