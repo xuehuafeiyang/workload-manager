@@ -4,6 +4,7 @@ use tauri::State;
 use crate::DbConn;
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ProjectStat {
     pub project_id: i64,
     pub project_name: String,
@@ -14,6 +15,7 @@ pub struct ProjectStat {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct MemberStat {
     pub member_id: i64,
     pub member_name: String,
@@ -22,12 +24,14 @@ pub struct MemberStat {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct TrendData {
     pub label: String,
     pub hours: f64,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct DashboardData {
     pub total_budget_hours: f64,
     pub total_consumed_hours: f64,
