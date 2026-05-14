@@ -8,6 +8,8 @@ const host = process.env.TAURI_DEV_HOST;
 export default defineConfig(async () => ({
   plugins: [react()],
   clearScreen: false,
+  // Tauri 打包时必须用相对路径，否则白板
+  base: "./",
   server: {
     port: 1420,
     strictPort: true,
